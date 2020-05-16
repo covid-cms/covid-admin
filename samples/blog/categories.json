@@ -1,7 +1,0 @@
-[
-    { "id": 1, "slug": "chuyen-cua-dev", "title": "Chuyện của dev", "parent_id": 0, "total_article": 10 },
-    { "id": 2, "slug": "san-pham-cua-binh", "title": "Sản phẩm của Bình", "parent_id": 0, "total_article": 10 },
-    { "id": 3, "slug": "javascript", "title": "JavaScript", "parent_id": 0, "total_article": 10 },
-    { "id": 4, "slug": "php", "title": "PHP", "parent_id": 0, "total_article": 10 },
-    { "id": 5, "slug": "trac-nghiem-lap-trinh", "title": "Trắc nghiệm lập trình", "parent_id": 0, "total_article": 10 }
-]
