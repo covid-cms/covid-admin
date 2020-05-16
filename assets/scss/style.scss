@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700');
+
+@import "node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css";
+
+@import "variables";
+@import "node_modules/admin-lte/build/scss/AdminLTE.scss";
+@import "node_modules/admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css";
+
+
+@import "./plugins/select2";
+@import "./plugins/swal2";
+@import "./layout";
+@import "./grid";
+@import "./editor";
+@import "./untils";
+@import "./table";
+@import "./forms";
+@import "./buttons";
+@import "./placeholder";
+@import "./image-input";

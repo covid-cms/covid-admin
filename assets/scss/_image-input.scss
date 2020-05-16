@@ -1,0 +1,12 @@
+.image-input {
+    .placeholder {
+        background: $gray-500;
+        color: #fff;
+        min-height: 70px;
+        border: 1px dashed $gray-900;
+
+        &:hover {
+            background: $gray-400;
+        }
+    }
+}
