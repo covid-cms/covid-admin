@@ -124,6 +124,10 @@
   export default {
     middleware: 'authenticate',
 
+    head: {
+      title: 'Chỉnh sửa bài viết'
+    },
+
     components: {
       editor,
       editorTitle,
@@ -149,8 +153,15 @@
       }
     },
 
-    async asyncData ({ params }) {
-      let { data: response } = await articleApi.getDetail(params.id);
+    async asyncData ({ params, error }) {
+      var response;
+
+      try {
+        var { data: response } = await articleApi.getDetail(params.id);
+      } catch (e) {
+        return error({ statusCode: e.response.status });
+      }
+
       let article = response.data.article;
       return {
         article: {

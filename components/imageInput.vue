@@ -70,7 +70,7 @@
     methods: {
       removeImage () {
         this.image = undefined;
-        this.$emit('remove');
+        this.$emit('input', '');
       },
 
       clickInputFile () {

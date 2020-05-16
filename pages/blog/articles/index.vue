@@ -101,6 +101,10 @@
   export default {
     middleware: 'authenticate',
 
+    head: {
+      title: 'Danh sách bài viết'
+    },
+
     components: {
       categoriesSelect,
       smartTable,

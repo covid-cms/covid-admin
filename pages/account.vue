@@ -76,6 +76,10 @@
       fvMessage,
     },
 
+    head: {
+      title: 'Tài khoản',
+    },
+
     created () {
       this.setActivedMenu(['account']);
     },

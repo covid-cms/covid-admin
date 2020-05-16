@@ -99,14 +99,18 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex';
-  import smartTable from '@/components/smartTable';
   import { strRandom, strSlug } from '@/helpers/str';
   import { homeUrl } from '@/helpers/url';
+  import smartTable from '@/components/smartTable';
   import fvMessage from '@/components/formValidator/message';
   import Validator from '@/plugins/validator';
 
   export default {
     middleware: 'authenticate',
+
+    head: {
+      title: 'Danh sách tag'
+    },
 
     components: {
       smartTable,

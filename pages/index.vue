@@ -23,6 +23,10 @@
   export default {
     middleware: 'authenticate',
 
+    head: {
+      title: 'Tổng quan',
+    },
+
     created () {
       this.setActivedMenu(['dashboard']);
     },

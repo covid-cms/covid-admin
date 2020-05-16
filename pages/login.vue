@@ -33,12 +33,17 @@
   </body>
 </template>
 <script>
-  import authApi from '@/api/auth';
   import { mapActions } from 'vuex';
+  import { setDocumentTitle } from '@/helpers/document';
+  import authApi from '@/api/auth';
 
   export default {
     layout: 'blank',
     middleware: 'guest',
+
+    head: {
+      title: 'Đăng nhập'
+    },
 
     data () {
       return {

@@ -119,6 +119,10 @@
   export default {
     middleware: 'authenticate',
 
+    head: {
+      title: 'Thêm bài viết mới'
+    },
+
     components: {
       editor,
       editorTitle,

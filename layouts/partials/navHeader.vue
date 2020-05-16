@@ -5,7 +5,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <nuxt-link to="/" class="nav-link">Trang chủ</nuxt-link>
+        <a :href="'/' | homeUrl" class="nav-link">Trang chủ</a>
       </li>
     </ul>
     <form class="form-inline ml-auto">
@@ -30,9 +30,14 @@
 
 <script>
   import { mapActions } from 'vuex';
+  import { homeUrl } from '@/helpers/url';
 
   export default {
     name: 'navHeader',
+
+    filters: {
+      homeUrl,
+    },
 
     methods: {
       ...mapActions(['showLogoutModal']),

@@ -68,16 +68,19 @@
 </template>
 <script>
   import { mapActions } from 'vuex';
-  import tags from '@/samples/blog/tags';
   import { strRandom } from '@/helpers/str';
-  import tagApi from '@/api/blog/tag';
   import { homeUrl } from '@/helpers/url';
+  import tags from '@/samples/blog/tags';
+  import tagApi from '@/api/blog/tag';
   import fvMessage from '@/components/formValidator/message';
   import Validator from '@/plugins/validator';
 
-
   export default {
     middleware: 'authenticate',
+
+    head: {
+      title: 'Chỉnh sửa tag'
+    },
 
     components: {
       fvMessage
@@ -92,8 +95,14 @@
       this['blog/tag/fetch']();
     },
 
-    async asyncData ({ params, store }) {
-      let { data: response } = await tagApi.getDetail(params.id);
+    async asyncData ({ params, error }) {
+      var response;
+
+      try {
+        var { data: response } = await tagApi.getDetail(params.id);
+      } catch (e) {
+        return error({ statusCode: e.response.status });
+      }
 
       return {
         tag: response.data.tag,

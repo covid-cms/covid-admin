@@ -86,6 +86,10 @@
   export default {
     middleware: 'authenticate',
 
+    head: {
+      title: 'Chỉnh sửa danh mục'
+    },
+
     components: {
       categoriesSelect,
       fvMessage
@@ -100,8 +104,14 @@
       this['blog/category/fetch']();
     },
 
-    async asyncData ({ params, store }) {
-      let { data: response } = await categoryApi.getDetail(params.id);
+    async asyncData ({ params, store, error }) {
+      var response;
+
+      try {
+        var { data: response } = await categoryApi.getDetail(params.id);
+      } catch (e) {
+        return error({ statusCode: e.response.status });
+      }
 
       return {
         category: response.data.category,

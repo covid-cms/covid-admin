@@ -103,15 +103,19 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex';
-  import categoriesSelect from '@/components/blog/categoriesSelect';
-  import smartTable from '@/components/smartTable';
   import { strRandom, strSlug } from '@/helpers/str';
   import { homeUrl } from '@/helpers/url';
+  import categoriesSelect from '@/components/blog/categoriesSelect';
+  import smartTable from '@/components/smartTable';
   import Validator from '@/plugins/validator';
   import fvMessage from '@/components/formValidator/message';
 
   export default {
     middleware: 'authenticate',
+
+    head: {
+      title: 'Danh sách danh mục'
+    },
 
     components: {
       fvMessage,
