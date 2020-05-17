@@ -34,6 +34,7 @@ module.exports = {
     { src: '~/plugins/common', mode: 'client' },
     { src: '~/plugins/sweetalert2', mode: 'client' },
     { src: '~/plugins/directives', mode: 'client' },
+    { src: '~/plugins/toast', mode: 'client' },
   ],
   /*
   ** Nuxt.js dev-modules

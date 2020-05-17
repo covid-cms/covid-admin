@@ -182,18 +182,12 @@
         this.isCreatingCategory = false;
 
         if (response.error) {
-          this.$toast.fire({
-            icon: 'error',
-            title: 'Không tạo được danh mục mới'
-          });
+          this.$toast.error('Không tạo được danh mục mới');
           this.validator.setErrors(response.errors);
           return;
         }
 
-        this.$toast.fire({
-          icon: 'success',
-          title: 'Đã thêm danh mục mới'
-        });
+        this.$toast.success('Đã thêm danh mục mới');
         this.resetCreateCategoryFields();
       },
 
@@ -229,10 +223,7 @@
 
         if (confirm) {
           await this['blog/category/delete'](category.id);
-          this.$toast.fire({
-            icon: 'success',
-            title: 'Đã xóa',
-          });
+          this.$toast.success('Đã xóa');
         }
       },
 

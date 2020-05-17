@@ -3,11 +3,9 @@
 </template>
 
 <script>
-  import vue from 'vue';
-  import ckeditor from '@/plugins/covid-admin-editor/ckeditor';
-  import content from '@/samples/blog/article_detail';
-  import CKEditor from '@ckeditor/ckeditor5-vue';
   import { strRandom } from '@/helpers/str';
+  import ckeditor from '@/plugins/covid-admin-editor/ckeditor';
+  import CKEditor from '@ckeditor/ckeditor5-vue';
   import editorConfig from '@/config/editor';
 
   export default {

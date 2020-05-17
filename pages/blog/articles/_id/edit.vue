@@ -196,17 +196,11 @@
 
         if (response.error) {
           this.validator.setErrors(response.errors);
-          this.$toast.fire({
-            icon: 'error',
-            title: 'Chưa cập nhật được bài viết'
-          });
+          this.$toast.error('Chưa cập nhật được bài viết');
           return;
         }
 
-        this.$toast.fire({
-          icon: 'success',
-          title: 'Đã lưu'
-        });
+        this.$toast.success('Đã lưu');
       },
 
       publishArticle () {

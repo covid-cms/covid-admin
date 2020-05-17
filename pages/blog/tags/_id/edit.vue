@@ -70,7 +70,6 @@
   import { mapActions } from 'vuex';
   import { strRandom } from '@/helpers/str';
   import { homeUrl } from '@/helpers/url';
-  import tags from '@/samples/blog/tags';
   import tagApi from '@/api/blog/tag';
   import fvMessage from '@/components/formValidator/message';
   import Validator from '@/plugins/validator';
@@ -120,17 +119,11 @@
 
         if (response.error) {
           this.validator.setErrors(response.error);
-          this.$toast.fire({
-            icon: 'error',
-            title: 'Thông tin chưa được lưu'
-          });
+          this.$toast.error('Thông tin chưa được lưu');
           return;
         }
 
-        this.$toast.fire({
-          icon: 'success',
-          title: 'Đã lưu',
-        });
+        this.$toast.success('Đã lưu');
       },
 
       async deleteTag () {

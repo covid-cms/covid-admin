@@ -77,7 +77,6 @@
   import { strRandom } from '@/helpers/str';
   import { arrFirst } from '@/helpers/arr';
   import { homeUrl } from '@/helpers/url';
-  import categories from '@/samples/blog/categories';
   import categoriesSelect from '@/components/blog/categoriesSelect';
   import fvMessage from '@/components/formValidator/message';
   import categoryApi from '@/api/blog/category';
@@ -130,17 +129,11 @@
 
         if (response.error) {
           this.validator.setErrors(response.errors);
-          this.$toast.fire({
-            icon: 'error',
-            title: 'Thông tin chưa được lưu'
-          });
+          this.$toast.error('Thông tin chưa được lưu');
           return;
         }
 
-        this.$toast.fire({
-          icon: 'success',
-          title: 'Đã lưu',
-        });
+        this.$toast.success('Đã lưu');
       },
 
       async deleteCategory () {

@@ -11,7 +11,7 @@
     </div>
     <div class="content">
       <div class="container-fluid">
-
+        <button class="btn btn-danger" @click.prevent="showToast">Show toast</button>
       </div>
     </div>
   </div>
@@ -32,6 +32,9 @@
     },
 
     methods: {
+      showToast () {
+        this.$toast2.info("Here is some information!");
+      },
       ...mapActions(['setActivedMenu']),
     }
   }

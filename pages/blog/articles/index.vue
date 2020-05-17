@@ -91,7 +91,6 @@
   import categoriesSelect from '@/components/blog/categoriesSelect';
   import smartTable from '@/components/smartTable';
   import pagination from '@/components/pagination';
-  import articles from '@/samples/blog/articles';
   import articleApi from '@/api/blog/article';
 
   const PUBLISHED = 'published';
@@ -187,10 +186,7 @@
 
         if (confirm) {
           await articleApi.delete(article.id);
-          this.$toast.fire({
-            icon: 'success',
-            title: 'Đã xóa',
-          });
+          this.$toast.success('Đã xóa');
           this.fetchData();
         }
       },

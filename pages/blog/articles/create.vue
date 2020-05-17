@@ -182,17 +182,11 @@
 
         if (response.error) {
           this.validator.setErrors(response.errors);
-          this.$toast.fire({
-            icon: 'error',
-            title: 'Chưa tạo được bài viết'
-          });
+          this.$toast.error('Chưa tạo được bài viết');
           return;
         }
 
-        this.$toast.fire({
-          icon: 'success',
-          title: 'Đã lưu'
-        });
+        this.$toast.success('Đã lưu');
 
         let article = response.data.article;
 

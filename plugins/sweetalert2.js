@@ -8,5 +8,4 @@ const Toast = Swal.mixin({
   timer: 3000
 });
 
-Vue.prototype.$toast = Toast;
 Vue.prototype.$alert = Swal;

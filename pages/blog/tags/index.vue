@@ -174,18 +174,12 @@
         this.isCreatingTag = false;
 
         if (response.error) {
-          this.$toast.fire({
-            icon: 'error',
-            title: 'Không tạo được tag mới'
-          });
+          this.$toast.error('Không tạo được tag mới');
           this.validator.setErrors(response.errors);
           return;
         }
 
-        this.$toast.fire({
-          icon: 'success',
-          title: 'Đã thêm tag mới'
-        });
+        this.$toast.success('Đã thêm tag mới');
         this.resetCreateTagFields();
       },
 
@@ -220,10 +214,7 @@
 
         if (confirm) {
           await this['blog/tag/delete'](tag.id);
-          this.$toast.fire({
-            icon: 'success',
-            title: 'Đã xóa',
-          });
+          this.$toast.success('Đã xóa');
         }
       },
 
